@@ -5,7 +5,7 @@ Desktop app build with ionic 3 & electron
 
 ## Install
 ```
-git clone https://github.com/davchezt/electron-markdown-viewer.git
+git clone https://github.com/davchezt/ionic-3-electron.git
 
 cd electron-markdown-viewer
 
