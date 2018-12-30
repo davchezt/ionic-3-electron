@@ -14,8 +14,8 @@
   },
   "build": {
     "appId": "com.davchezt.ionic3-electron",
-    "electronVersion": "1.7.5",
-    "asar": false,
+    "electronVersion": "4.0.0",
+    "asar": true,
     "files": [
       "www/**/*",
       "electron/*"
@@ -23,13 +23,12 @@
   },
   "private": true,
   "scripts": {
-    "start": "concurrently \"npm run ionic-start\" \"wait-on http://localhost:8100 && npm run electron-strat\"",
-    "electron-strat": "electron .",
-    "electron-build": "npm run build && node_modules/.bin/build",
-    "ionic-start": "ionic-app-scripts serve --nobrowser --prod",
-    "ionic-clean": "ionic-app-scripts clean",
-    "ionic-build": "ionic-app-scripts build",
-    "ionic-lint": "ionic-app-scripts lint"
+    "start": "concurrently \"npm run ionic:start\" \"wait-on http://localhost:8100 && electron .\"",
+    "build": "npm run ionic:build && electron-builder",
+    "ionic:start": "ionic-app-scripts serve --nobrowser --prod",
+    "ionic:clean": "ionic-app-scripts clean",
+    "ionic:build": "ionic-app-scripts build --prod",
+    "ionic:lint": "ionic-app-scripts lint"
   },
   "homepage": "https://github.com/davchezt/ionic-3-electron",
   "dependencies": {
